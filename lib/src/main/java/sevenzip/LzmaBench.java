@@ -1,4 +1,4 @@
-package SevenZip;
+package sevenzip;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;

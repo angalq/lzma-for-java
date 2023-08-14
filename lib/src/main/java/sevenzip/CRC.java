@@ -1,6 +1,6 @@
 // SevenZip/CRC.java
 
-package SevenZip;
+package sevenzip;
 
 public class CRC
 {

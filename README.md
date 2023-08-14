@@ -1,2 +1,5 @@
-# lzma-for-java
-LZMA library for Java
+# LZMA for Java
+
+LZMA library for Java from 7-zip.
+
+
