@@ -185,7 +185,7 @@ public class LzmaAlone
 				dictionary = params.DictionarySize;
 			if (params.MatchFinder > 1)
 				throw new Exception("Unsupported match finder");
-			SevenZip.LzmaBench.LzmaBenchmark(params.NumBenchmarkPasses, dictionary);
+			sevenzip.LzmaBench.LzmaBenchmark(params.NumBenchmarkPasses, dictionary);
 		}
 		else if (params.Command == CommandLine.kEncode || params.Command == CommandLine.kDecode)
 		{
@@ -200,7 +200,7 @@ public class LzmaAlone
 				eos = true;
 			if (params.Command == CommandLine.kEncode)
 			{
-				SevenZip.Compression.LZMA.Encoder encoder = new SevenZip.Compression.LZMA.Encoder();
+				sevenzip.compression.lzma.Encoder encoder = new sevenzip.compression.lzma.Encoder();
 				if (!encoder.SetAlgorithm(params.Algorithm))
 					throw new Exception("Incorrect compression mode");
 				if (!encoder.SetDictionarySize(params.DictionarySize))
@@ -228,7 +228,7 @@ public class LzmaAlone
 				byte[] properties = new byte[propertiesSize];
 				if (inStream.read(properties, 0, propertiesSize) != propertiesSize)
 					throw new Exception("input .lzma file is too short");
-				SevenZip.Compression.LZMA.Decoder decoder = new SevenZip.Compression.LZMA.Decoder();
+				sevenzip.compression.lzma.Decoder decoder = new sevenzip.compression.lzma.Decoder();
 				if (!decoder.SetDecoderProperties(properties))
 					throw new Exception("Incorrect stream properties");
 				long outSize = 0;
